@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fanbase Aulia Riza</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1 style="text-align: center; color: black;">Aulia Riza Archive</h1>
+    </header>
+
+    <!-- Tombol pengaturan (hamburger) -->
+    <div id="settingsButton" style="position: absolute; top: 30px; right: 20px;">
+        <button onclick="toggleSettings()">789</button>
+    </div>
+
+    <!-- Menu Pengaturan -->
+    <section id="settings" style="display: none; position: absolute; top: 60px; right: 20px; font-size: 1.2em; padding: 15px; background: white; border: 1px solid #ccc; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
+        <h3>Pengaturan</h3>
+        <label><input type="checkbox" id="darkModeToggle"> Mode Gelap</label><br>
+        <label><input type="checkbox" id="notifToggle"> Notifikasi Pesan Baru</label>
+        <hr>
+    </section>
+    
+    <!-- Modal untuk Lightbox -->
+    <div id="lightboxModal" class="modal">
+        <span class="close">&times;</span>
+        <div class="modal-content">
+            <span class="prev">&#10094;</span>
+            <img id="lightboxImg" src="" alt="">
+            <span class="next">&#10095;</span>
+        </div>
+    </div>
+
+    <!-- Section Tentang Aulia -->
+    <section id="about" class="fade-in">
+        <h2>Biodata Aulia Riza</h2>
+        <div class="about-content">
+            <img src="https://pbs.twimg.com/profile_images/1870119217384841216/2qNB1qel_400x400.jpg" alt="Foto Profile Aulia Riza" class="about-img">
+            <div class="about-info">
+                <p><strong>Nama Lengkap:</strong> Aulia Riza Firdausy Effendi</p>
+                <p><strong>Nama Panggung:</strong> Auwia</p>
+                <p><strong>Tanggal Lahir:</strong> 14 Juli 2007</p>
+                <p><strong>Asal Kota:</strong> Surabaya, Indonesia</p>
+                <p><strong>Profesi:</strong> Aktris Teater dan Penyanyi</p>
+                <p><strong>Golongan Darah:</strong> O</p>
+                <p><strong>Tinggi Badan:</strong> 166 cm</p>
+                <p><strong>Jikoshoukai:</strong> Serigala tangguh di bawah sinar purnama. Panggil Aku, Auuu...wia!</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="schedule" class="fade-in">
+        <h2>Jadwal Show Teater — Total Show Aulia: <strong>35</strong></h2>
+        <ul class="schedule">
+            <li onclick="toggleMembers('members1')" class="bounce-in">
+               <strong>29 November 2025 | 19:00 WIB:</strong> Pertunjukan "KIRA KIRA GIRLS"
+                <div id="members1" class="members">
+                    <p><strong>Member: Trainee</strong></p>
+                </div>
+            </li>
+            <li onclick="toggleMembers('members2')" class="bounce-in">
+                <strong>30 November 2025 | 19:00 WIB </strong> Pertunjukan "KIRA KIRA GIRLS"
+                <div id="members2" class="members">
+                    <p><strong>Member: Trainee</strong></p>
+                </div>
+            </li>
+            <li onclick="toggleMembers('members3')" class="bounce-in">
+                <strong>Segera Hadir | </strong>
+                <div id="members3" class="members">
+                    <p><strong></strong></p>
+                </div>
+            </li>
+        </ul>
+        <p><em>Jadwal dapat berubah. Cek akun resmi JKT48 untuk update terbaru.</em></p>
+    </section>
+
+    <section id="messages" class="fade-in">
+        <h2>Pesan untuk Aulia Riza</h2>
+        <p>Tinggalkan pesan dukunganmu! Pesan akan muncul setelah dikirim.</p>
+        <form id="messageForm">
+            <label for="name">Nama Anda:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="message">Pesan:</label>
+            <textarea id="message" name="message" required></textarea>
+            <button type="submit">Kirim Pesan</button>
+        </form>
+        <div id="confirmation">Pesan Anda telah dikirim!</div>
+        <h3>Pesan dari Fans</h3>
+        <div id="messageList" class="message-list"></div>
+    </section>
+
+    <section id="photos" class="fade-in">
+        <h2>Album Aulia Riza</h2>
+        <div class="photos">
+            <img src="https://pbs.twimg.com/media/G6SolBKXYAA_E1f?format=jpg&name=small" alt="Foto Aulia " class="zoom-in">
+            <img src="https://pbs.twimg.com/media/G6Sc_S0XQAAC4qd?format=jpg&name=360x360" alt="Foto Aulia " class="zoom-in">
+            <img src="https://pbs.twimg.com/media/G6Sc_S1XYAAUZsW?format=jpg&name=360x360" alt="Foto Aulia " class="zoom-in">
+            <img src="https://pbs.twimg.com/media/G58qkQObUAA7VJo?format=jpg&name=360x360" alt="Foto Aulia " class="zoom-in">
+            <img src="https://pbs.twimg.com/media/G53IpqtbcAAahF1?format=jpg&name=large" alt="Foto Aulia 1" class="zoom-in">
+            <img src="https://pbs.twimg.com/media/G53IpqrbkAA3l_5?format=jpg&name=large" alt="Foto Aulia 2" class="zoom-in">
+            <img src="https://pbs.twimg.com/media/G53IpqqbUAAbNT5?format=jpg&name=large" alt="Foto Aulia 3" class="zoom-in">
+            <img src="https://pbs.twimg.com/media/G5ynnC_b0AAOIsK?format=jpg&name=small" alt="Foto Aulia 4" class="zoom-in">
+            <img src="https://pbs.twimg.com/media/G5TJOkubIAMCVet?format=jpg&name=360x360" alt="Foto Aulia 5" class="zoom-in">
+            <img src="https://pbs.twimg.com/media/G5TJOkwbIAQ9VB6?format=jpg&name=360x360" alt="Foto Aulia 6" class="zoom-in">
+            <img src="https://pbs.twimg.com/media/G4hMlj0akAASjcJ?format=jpg&name=small" alt="Foto Aulia 7" class="zoom-in">
+            <img src="https://pbs.twimg.com/media/G4KaeAzXgAEwoJ4?format=jpg&name=360x360" alt="Foto Aulia 8" class="zoom-in">
+            <img src="https://pbs.twimg.com/media/G4KaeA1XEAAXTDv?format=jpg&name=360x360" alt="Foto Aulia 9" class="zoom-in">
+            <img src="https://pbs.twimg.com/media/G34GdnLXcAAKztl?format=jpg&name=small" alt="Foto Aulia 10" class="zoom-in">
+            <img src="https://pbs.twimg.com/media/G3nisJEWkAAPKQl?format=jpg&name=small" alt="Foto Aulia 11" class="zoom-in">
+            <img src="https://pbs.twimg.com/media/G2gSJYPbQAA2ohg?format=jpg&name=small" alt="Foto Aulia 12" class="zoom-in">
+            <img src="https://pbs.twimg.com/media/G2vbdghbUAAcEju?format=jpg&name=small" alt="Foto Aulia 13" class="zoom-in">
+            <img src="https://pbs.twimg.com/media/G2vbdgDacAANiYz?format=jpg&name=360x360" alt="Foto Aulia 14" class="zoom-in">
+            <img src="https://pbs.twimg.com/media/G3TbhUIaMAA8sTr?format=jpg&name=small" alt="Foto Aulia 15" class="zoom-in">
+            <img src="https://pbs.twimg.com/media/G3TbhUCboAARPHV?format=jpg&name=small" alt="Foto Aulia 16" class="zoom-in">
+            <img src="https://pbs.twimg.com/media/G2Qm0Z7akAAhDbb?format=jpg&name=small" alt="Foto Aulia 17" class="zoom-in">
+            <img src="https://pbs.twimg.com/media/G2LoK-makAA8Bzm?format=jpg&name=small" alt="Foto Aulia 18" class="zoom-in">
+            <img src="https://pbs.twimg.com/media/G1hcIroboAAgCQp?format=jpg&name=small" alt="Foto Aulia 19" class="zoom-in">
+            <img src="https://pbs.twimg.com/media/G1I1YUMaQAMi43f?format=jpg&name=large" alt="Foto Aulia 20" class="zoom-in">
+            <!-- Tambahkan lebih banyak gambar jika diperlukan -->
+        </div>
+    </section>
+
+    <section id="tagline" class="fade-in">
+        <h3>Tagline Aulia Riza</h3>
+        <p class="tagline"><em>#Auwmazing #Auwyasumi #AuwEats #CeritAuwia</em></p>
+        
+    </section>
+
+    <!-- Footer dengan Created By -->
+    <footer class="footer">
+        <p>Created by Ibat.sky | &copy; 2025.</p>
+    </footer>
+</body>
+</html>

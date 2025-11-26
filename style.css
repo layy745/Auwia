@@ -1,0 +1,414 @@
+/* ===== BODY DAN UMUM ===== */
+body {
+    font-family: 'Times New Roman', serif;
+    margin: 0;
+    padding: 0;
+    background-color: #EDE9FE; /* Diubah dari #F5F3FF ke ungu lavender super muda untuk lebih fresh */
+    color: #333;
+}
+
+/* ===== HEADER ===== */
+header {
+    background-color: #8B5CF6; /* Diubah dari #C4B5FD ke ungu medium yang lebih bold */
+    color: white;
+    text-align: center;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+header img {
+    max-width: 100%;
+    height: auto;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+/* ===== SECTIONS UMUM ===== */
+section {
+    margin: 20px;
+    padding: 20px;
+    background-color: #F9FAFB; /* Diubah dari white ke abu sangat muda untuk kontras lembut */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#settingsButton {
+    position: fixed;
+    top: 30px;
+    right: 20px;
+    z-index: 10000;
+}
+
+#settings {
+    position: fixed;      /* tetap di tempat saat scroll */
+    top: 60px;
+    right: 20px;
+    width: 250px;
+    padding: 15px;
+    background-color: #1F2937; /* Diubah ke abu gelap untuk dark mode feel */
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    z-index: 9999;
+    font-size: 1.1em;
+}
+
+#settings a {
+    color: #A78BFA; /* Diubah ke ungu muda untuk aksen */
+    text-decoration: none;
+}
+
+#settings a:hover {
+    text-decoration: underline;
+}
+
+/* ===== MODE GELAP ===== */
+.dark {
+    background-color: #1F2937; /* Diubah dari #333 ke abu gelap yang lebih modern */
+    color: #F9FAFB; /* Putih untuk text */
+}
+
+.dark section {
+    background-color: #374151; /* Abu medium untuk section */
+    color: #F9FAFB;
+}
+
+.dark .schedule li {
+    background-color: #4B5563; /* Abu gelap untuk list */
+}
+
+.dark .members {
+    background-color: #6B7280; /* Abu sedang */
+}
+
+.dark .message-item {
+    background-color: #4B5563;
+}
+
+/* ===== SECTION TENTANG AULIA ===== */
+.about-content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.about-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.about-info p {
+    margin: 5px 0;
+}
+
+/* ===== GALERI FOTO ===== */
+.photos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    padding: 10px;
+    max-width: 100%;
+}
+
+.photos img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.photos img:hover {
+    transform: scale(1.05);
+}
+
+/* Responsif: 2 kolom di tablet, 1 kolom di mobile */
+@media (max-width: 768px) {
+    .photos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .photos {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+/* ===== MODAL LIGHTBOX ===== */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.modal.show {
+    opacity: 1;
+}
+
+.modal-content {
+    max-width: 90%;
+    max-height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.modal-content img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 8px;
+    transform: scale(0.8);
+    transition: transform 0.5s ease;
+}
+
+.modal.show .modal-content img {
+    transform: scale(1);
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    color: #fff;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close:hover {
+    color: #ccc;
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #fff;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 10px;
+    user-select: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.prev:hover, .next:hover {
+    color: #ccc;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+/* ===== JADWAL SHOW TEATER ===== */
+.schedule {
+    list-style-type: none;
+    padding: 0;
+}
+
+.schedule li {
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #F3F4F6; /* Diubah dari #f6f5fc ke abu muda */
+    border-left: 5px solid #8B5CF6; /* Diubah ke ungu medium */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;
+    transform: translateX(-50px);
+    animation: slideInLeft 0.8s ease-out forwards;
+}
+
+.schedule li:hover {
+    background-color: #E5E7EB; /* Abu lebih terang */
+    transform: translateX(10px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.schedule li:nth-child(1) { animation-delay: 0.2s; }
+.schedule li:nth-child(2) { animation-delay: 0.4s; }
+.schedule li:nth-child(3) { animation-delay: 0.6s; }
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.members {
+    display: none;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #F9FAFB; /* Abu sangat muda */
+    border-radius: 4px;
+    transition: max-height 0.5s ease, opacity 0.5s ease;
+}
+
+.members.show {
+    max-height: 200px; /* Sesuaikan tinggi */
+    opacity: 1;
+}
+
+/* ===== FORM DAN PESAN ===== */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+textarea {
+    height: 100px;
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #8B5CF6; /* Diubah dari #C4B5FD */
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color:  #8B5CF6; /* Diubah dari #7C3AED ke pink hot untuk aksen */
+}
+
+#confirmation {
+    display: none;
+    color: green;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.message-list {
+    margin-top: 20px;
+}
+
+.message-item {
+    background-color: #F9FAFB; /* Abu sangat muda */
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 4px;
+}
+
+/* ===== TAGLINE ===== */
+.tagline {
+    font-style: italic;
+    font-size: 17px;
+    text-align: left;
+}
+/* ===== ANIMASI ===== */
+/* Efek Fade-in untuk section saat scroll */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Efek Bounce-in untuk list items */
+.bounce-in {
+    opacity: 0;
+    animation: bounceIn 0.8s ease-out forwards;
+}
+
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+    70% {
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Efek Zoom-in untuk gambar (diperkuat) */
+.zoom-in {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.zoom-in:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* ===== LINK MEDIA SOSIAL ===== */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.social-icon {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease;
+}
+
+.social-icon:hover {
+    transform: scale(1.2);
+}
+
+/* ===== FOOTER ===== */
+.footer {
+    text-align: center;
+    padding: 9px;
+    background-color: #8B5CF6; /* Diubah dari #C4B5FD */
+    color: rgb(255, 255, 255); /* Putih untuk kontras */
+    margin-top: 20px;
+    font-size: 14px;
+}
