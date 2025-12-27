@@ -136,6 +136,24 @@ document.getElementById('temaHijau').addEventListener('click', function() {
   document.body.className = 'tema-hijau';
 });
 
+document.querySelectorAll('.share-button').forEach(button => {
+  button.addEventListener('click', function(e) {
+    e.preventDefault();
+    const social = this.dataset.social;
+    const url = encodeURIComponent(window.location.href);
+    const text = encodeURIComponent(document.title);
+    let shareUrl = '';
+
+    if (social === 'twitter') {
+      shareUrl = `https://x.com/Auwia_JKT48?s=20`;
+    } else if (social === 'Instagram') {
+      shareUrl = `https://www.instagram.com/auwia.jkt48?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==`;
+    }
+
+    window.open(shareUrl, '_blank');
+  });
+});
+
 // Untuk tutup dengan klik di luar menu (opsional), bisa ditambahkan event listener document.body
 
 
