@@ -127,6 +127,15 @@ function toggleSettings() {
         settings.style.display = 'block';
     }
 }
+
+document.getElementById('temaBiru').addEventListener('click', function() {
+  document.body.className = 'tema-biru';
+});
+
+document.getElementById('temaHijau').addEventListener('click', function() {
+  document.body.className = 'tema-hijau';
+});
+
 // Untuk tutup dengan klik di luar menu (opsional), bisa ditambahkan event listener document.body
 
 
