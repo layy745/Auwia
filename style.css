@@ -114,6 +114,15 @@ section.visible {
 .about-info p {
     margin: 5px 0;
 }
+body.tema-biru {
+  background-color: #e0f2fe;
+  color: #0369a1;
+}
+
+body.tema-hijau {
+  background-color: #f0fdf4;
+  color: #166534;
+}
 
 /* ===== GALERI FOTO ===== */
 .photos {
