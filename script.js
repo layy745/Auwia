@@ -145,9 +145,9 @@ document.querySelectorAll('.share-button').forEach(button => {
     let shareUrl = '';
 
     if (social === 'twitter') {
-      shareUrl = `https://x.com/Auwia_JKT48?s=20`;
+      shareUrl = `https://pngdownload.io/wp-content/uploads/2025/06/X-Logo-Twitter-Rebrand.webp`;
     } else if (social === 'Instagram') {
-      shareUrl = `https://www.instagram.com/auwia.jkt48?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==`;
+      shareUrl = `https://img.freepik.com/premium-vector/instagram-vector-logo-icon-social-media-logotype_901408-392.jpg?semt=ais_hybrid&w=740&q=80`;
     }
 
     window.open(shareUrl, '_blank');
