@@ -143,13 +143,6 @@ document.querySelectorAll('.share-button').forEach(button => {
     const url = encodeURIComponent(window.location.href);
     const text = encodeURIComponent(document.title);
     let shareUrl = '';
-
-    if (social === 'twitter') {
-      shareUrl = `https://pngdownload.io/wp-content/uploads/2025/06/X-Logo-Twitter-Rebrand.webp`;
-    } else if (social === 'Instagram') {
-      shareUrl = `https://img.freepik.com/premium-vector/instagram-vector-logo-icon-social-media-logotype_901408-392.jpg?semt=ais_hybrid&w=740&q=80`;
-    }
-
     window.open(shareUrl, '_blank');
   });
 });
