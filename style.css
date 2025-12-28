@@ -395,21 +395,14 @@ button:hover {
 }
 
 /* ===== LINK MEDIA SOSIAL ===== */
-.social-links {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 20px;
+.fa-instagram {
+    color: #E1306C; /* Warna khas Instagram */
+    font-size: 30px; /* Ukuran ikon */
+    transition: transform 0.3s;
 }
 
-.social-icon {
-    width: 40px;
-    height: 40px;
-    transition: transform 0.3s ease;
-}
-
-.social-icon:hover {
-    transform: scale(1.2);
+.fa-instagram:hover {
+    transform: scale(1.2); /* Efek membesar saat kursor di atasnya */
 }
 
 /* ===== FOOTER ===== */
