@@ -137,15 +137,6 @@ const observer = new IntersectionObserver(entries => {
 sections.forEach(sec => observer.observe(sec));
 
 // ============================
-// TEMA WARNA
-// ============================
-const biru = document.getElementById('temaBiru');
-const hijau = document.getElementById('temaHijau');
-
-if (biru) biru.onclick = () => document.body.className = 'tema-biru';
-if (hijau) hijau.onclick = () => document.body.className = 'tema-hijau';
-
-// ============================
 // SHARE BUTTON
 // ============================
 document.querySelectorAll('.share-button').forEach(button => {
