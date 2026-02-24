@@ -70,32 +70,61 @@ section.visible {
     text-decoration: none;
 }
 
-#settings a:hover {
-    text-decoration: underline;
+/* Gaya dasar Link Navigasi */
+.nav-links li {
+    position: relative;
+    padding: 5px 0;
 }
 
-/* ===== MODE GELAP ===== */
-.dark {
-    background-color: #1F2937; /* Diubah dari #333 ke abu gelap yang lebih modern */
-    color: #F9FAFB; /* Putih untuk text */
+.nav-links li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    display: inline-block;
 }
 
-.dark section {
-    background-color: #374151; /* Abu medium untuk section */
-    color: #F9FAFB;
+/* Efek Garis Bawah (Sliding Underline) */
+.nav-links li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #e8491d; /* Warna garis */
+    transition: width 0.3s ease;
 }
 
-.dark .schedule li {
-    background-color: #4B5563; /* Abu gelap untuk list */
+/* Animasi saat Mouse Menyentuh Menu */
+.nav-links li a:hover {
+    color: #e8491d;
+    transform: translateY(-3px); /* Menu sedikit terangkat ke atas */
 }
 
-.dark .members {
-    background-color: #6B7280; /* Abu sedang */
+.nav-links li a:hover::after {
+    width: 100%; /* Garis muncul memanjang */
 }
 
-.dark .message-item {
-    background-color: #4B5563;
+/* Animasi saat Menu Diklik (Aktif) */
+.nav-links li a:active {
+    transform: scale(0.95);
 }
+
+/* Perbaikan Responsif untuk HP */
+@media (max-width: 600px) {
+    .navbar {
+        flex-direction: column;
+        gap: 10px;
+        padding: 15px;
+    }
+    .nav-links {
+        gap: 10px;
+        font-size: 0.9rem;
+    }
+}
+
 
 /* ===== SECTION TENTANG AULIA ===== */
 .about-content {
