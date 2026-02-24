@@ -57,14 +57,31 @@ if (form) {
 }
 
 // ============================
-// DARK MODE
+// Menandai menu aktif saat di-scroll
 // ============================
-const darkToggle = document.getElementById('darkModeToggle');
-if (darkToggle) {
-  darkToggle.addEventListener('change', () => {
-    document.body.classList.toggle('dark');
-  });
-}
+window.addEventListener('scroll', () => {
+    let current = '';
+    const sections = document.querySelectorAll('section');
+    
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (pageYOffset >= (sectionTop - 100)) {
+            current = section.getAttribute('id');
+        }
+    });
+
+    document.querySelectorAll('.nav-links li a').forEach(a => {
+        a.classList.remove('active');
+        if (a.getAttribute('href').includes(current)) {
+            a.style.color = '#e8491d'; // Warna saat aktif
+            a.style.fontWeight = 'bold';
+        } else {
+            a.style.color = ''; // Kembali ke warna semula
+            a.style.fontWeight = '500';
+        }
+    });
+});
 
 // ============================
 // LIGHTBOX GALERI
