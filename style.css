@@ -3,13 +3,13 @@ body {
     font-family: 'Times New Roman', serif;
     margin: 0;
     padding: 0;
-    background-color: #EDE9FE; /* Diubah dari #F5F3FF ke ungu lavender super muda untuk lebih fresh */
+    background-color: #ffffff; /* Diubah dari #F5F3FF ke ungu lavender super muda untuk lebih fresh */
     color: #333;
 }
 
 /* ===== HEADER ===== */
 header {
-    background-color: #ffffff; /* Diubah dari #C4B5FD ke ungu medium yang lebih bold */
+    background-color: #fffff; /* Diubah dari #C4B5FD ke ungu medium yang lebih bold */
     color: white;
     text-align: center;
     padding: 10px;
