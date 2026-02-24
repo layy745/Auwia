@@ -9,7 +9,7 @@ body {
 
 /* ===== HEADER ===== */
 header {
-    background-color: #8B5CF6; /* Diubah dari #C4B5FD ke ungu medium yang lebih bold */
+    background-color: #ffffff; /* Diubah dari #C4B5FD ke ungu medium yang lebih bold */
     color: white;
     text-align: center;
     padding: 10px;
@@ -30,7 +30,7 @@ header img {
 
 /* Perbaikan Background & Teks Umum */
 body {
-    background-color: #8a4fff; /* Ungu seperti di gambarmu */
+    background-color: #ffffff; /* Ungu seperti di gambarmu */
     margin: 0;
     padding: 0;
 }
