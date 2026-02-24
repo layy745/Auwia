@@ -28,101 +28,64 @@ header img {
     margin-bottom: 20px;
 }
 
-/* ===== SECTIONS UMUM ===== */
-section {
-    margin: 20px;
-    padding: 20px;
-    background-color: #F9FAFB; /* Diubah dari white ke abu sangat muda untuk kontras lembut */
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    opacity: 0;
-    transform: translateY(50px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
+/* Perbaikan Background & Teks Umum */
+body {
+    background-color: #8a4fff; /* Ungu seperti di gambarmu */
+    margin: 0;
+    padding: 0;
 }
 
-section.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-#settingsButton {
+/* Perbaikan Navbar agar ke Kiri Atas & Horizontal */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.9); /* Putih transparan */
+    padding: 10px 30px;
     position: fixed;
-    top: 30px;
-    right: 20px;
-    z-index: 10000;
+    top: 0;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 2000;
 }
 
-#settings {
-    position: fixed;      /* tetap di tempat saat scroll */
-    top: 60px;
-    right: 20px;
-    width: 250px;
-    padding: 15px;
-    background-color: #1F2937; /* Diubah ke abu gelap untuk dark mode feel */
-    border-radius: 8px;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
-    z-index: 9999;
-    font-size: 1.1em;
-}
-
-#settings a {
-    color: #A78BFA; /* Diubah ke ungu muda untuk aksen */
-    text-decoration: none;
-}
-
-/* Gaya dasar Link Navigasi */
-.nav-links li {
-    position: relative;
-    padding: 5px 0;
+.nav-links {
+    display: flex; /* Membuat menu berjejer ke samping, bukan ke bawah */
+    list-style: none;
+    gap: 20px;
+    margin: 0;
 }
 
 .nav-links li a {
     text-decoration: none;
+    color: #8a4fff; /* Warna teks menu ungu agar kontras */
+    font-weight: bold;
+}
+
+/* Perbaikan Card (Kotak Putih) agar teks di dalamnya hitam/ungu */
+section {
+    background: white;
+    margin: 100px 20px 20px 20px; /* Jarak agar tidak tertutup navbar */
+    padding: 30px;
+    border-radius: 15px;
+    color: #333; /* Warna teks di dalam kotak putih agar terbaca */
+    text-align: center;
+}
+
+/* Khusus Biodata agar Foto dan Teks Rapi */
+.about-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
     color: #333;
-    font-weight: 500;
-    font-size: 1.1rem;
-    transition: all 0.3s ease;
-    display: inline-block;
 }
 
-/* Efek Garis Bawah (Sliding Underline) */
-.nav-links li a::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: #e8491d; /* Warna garis */
-    transition: width 0.3s ease;
-}
-
-/* Animasi saat Mouse Menyentuh Menu */
-.nav-links li a:hover {
-    color: #e8491d;
-    transform: translateY(-3px); /* Menu sedikit terangkat ke atas */
-}
-
-.nav-links li a:hover::after {
-    width: 100%; /* Garis muncul memanjang */
-}
-
-/* Animasi saat Menu Diklik (Aktif) */
-.nav-links li a:active {
-    transform: scale(0.95);
-}
-
-/* Perbaikan Responsif untuk HP */
-@media (max-width: 600px) {
-    .navbar {
-        flex-direction: column;
-        gap: 10px;
-        padding: 15px;
-    }
-    .nav-links {
-        gap: 10px;
-        font-size: 0.9rem;
-    }
+.about-img {
+    width: 150px;
+    border-radius: 50%;
+    border: 3px solid #8a4fff;
 }
 
 
