@@ -13,28 +13,18 @@
     </header>
 
     <!-- Tombol pengaturan (hamburger) -->
-    <div id="settingsButton" style="position: absolute; top: 30px; right: 20px;">
-        <button onclick="toggleSettings()">☰</button>
-    </div>
-
-    <!-- Menu Pengaturan -->
-    <section id="settings" style="display: none; position: absolute; top: 60px; right: 20px; font-size: 1.2em; padding: 15px; background: white; border: 1px solid #ccc; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
-        <h3>Pengaturan</h3>
-        <label><input type="checkbox" id="darkModeToggle"> Mode Gelap</label><br>
-        <label><input type="checkbox" id="notifToggle"> Notifikasi Pesan Baru</label>
-        <hr>
-    </section>
+   <nav class="navbar">
+    <div class="nav-logo">Auliaverse</div>
+    <ul class="nav-links">
+        <li><a href="#welcome">Home</a></li>
+        <li><a href="#about">Biodata</a></li>
+        <li><a href="#schedule">Jadwal</a></li>
+        <li><a href="#messages">Pesan</a></li>
+        <li><a href="#photos">Galeri</a></li>
+    </ul>
+</nav
     
-    <!-- Modal untuk Lightbox -->
-    <div id="lightboxModal" class="modal">
-        <span class="close">&times;</span>
-        <div class="modal-content">
-            <span class="prev">&#10094;</span>
-            <img id="lightboxImg" src="" alt="">
-            <span class="next">&#10095;</span>
-        </div>
-    </div>
-
+  <!-- Welcome -->
     <section id="welcome" class="fade-in">
         <h2>Welcome To Auliaverse</h2>
         <p>Auliaverse adalah ruang fansbase yang didedikasikan untuk Auwia JKT48, sebagai wujud dukungan, apresiasi, dan rasa kebersamaan dari para penggemar. Tempat ini dibangun untuk menghubungkan sesama fans, berbagi informasi, karya, serta momen berharga yang terinspirasi dari perjalanan Auwia JKT48.
@@ -82,6 +72,7 @@
     </section>
 
     <section id="schedule" class="fade-in">
+        
         <h2>Jadwal Show Teater — Total Show Aulia: <strong>38</strong></h2>
         <ul class="schedule">
             </li>
